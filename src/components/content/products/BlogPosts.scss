@@ -1,0 +1,83 @@
+.blog-container {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-row {
+  display: flex;
+  justify-content: space-between; /* Display posts horizontally */
+  margin: 0 -10px; /* Add margin to compensate for negative margins below */
+}
+
+.post {
+  flex: 0 0 calc(25% - 20px); /* 4 posts per row with margin */
+  margin: 0 10px;
+}
+
+.blog-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.blog-header h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.blog-posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.post {
+  flex: 0 0 calc(25% - 10px); /* 25% minus margin */
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background: #f9f9f9;
+}
+
+.button-container {
+  text-align: center; /* Center align the buttons */
+}
+
+.transparent-button {
+  width: 150px;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.transparent-button:hover {
+  background-color: #2D6D73C9;
+  color: white;
+}
+
+.post-title {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.post-content {
+  font-size: 16px;
+  color: #555;
+}
+
+.small-image img {
+  max-width: 90%;
+  height: auto;
+  padding: 20px;
+}
+

@@ -1,0 +1,58 @@
+.contact-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: rgb(255 255 255 / 50%);
+}
+
+.contact-info {
+  flex: 1;
+  padding: 10px;
+  background-color: #f7f7f700;
+  margin-right: 20px;
+  color: #2d6d73c9;
+}
+
+.contact-info h2 {
+  font-size: 24px;
+}
+
+.contact-info p {
+  margin: 10px 0;
+}
+
+/* Styles for the contact form section (right) */
+.contact-form {
+  flex: 2;
+  padding: 10px;
+  border: 1px solid #fff;
+  background-color: #ffffff;
+}
+
+.contact-form h2 {
+  font-size: 24px;
+}
+
+.contact-form label {
+  display: block;
+  margin: 10px 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.contact-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
