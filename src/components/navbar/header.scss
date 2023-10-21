@@ -13,9 +13,17 @@
   font-weight: bold;
 }
 
+.logo-img {
+  width: 120px;
+  height: 110px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
 .nav {
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 
 .nav a {
@@ -25,11 +33,91 @@
 }
 
 .register-button {
-  background-color: #0073e6; /* Button background color */
-  color: #fff; /* Text color */
+  background-color: white;
+  color: #2d6d73c9;
   border: none;
-  padding: 10px 20px; /* Adjust padding as needed */
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   width: 100px;
+}
+
+.register-button hover {
+  background-color: white !important;
+}
+
+.link-logo {
+  text-decoration: none;
+  color: white;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.menu-icon {
+  display: none; /* Hide the hamburger icon by default */
+  flex-direction: column;
+  cursor: pointer;
+  height: 100%;
+}
+
+.menu-icon.open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-3px, 3px);
+}
+
+.menu-icon.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-3px, -3px);
+}
+
+.menu-icon .bar::before,
+.menu-icon .bar::after {
+  content: "|";
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 4px;
+}
+
+.menu-icon .bar::before {
+  top: -10px;
+}
+
+.menu-icon .bar::after {
+  top: 10px;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #2d6d73c9;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .nav.open {
+    display: flex;
+    height: 100%;
+    margin-top: 20px;
+  }
+
+  .menu-icon {
+    display: flex;
+    height: 100%;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+  }
 }

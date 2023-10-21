@@ -1,12 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import Cookies from 'js-cookie';
+import React, {useEffect, useState} from 'react';
+import {useLocation} from "react-router-dom";
+import './ProfileModal.scss'
+
 interface UserData {
     id: number;
     emri: string;
     email: string;
+
+    first_name: string;
+
+    last_name: string;
+
+    birthdate: string;
 }
 function ProfileModal() {
     const [userData, setUserData] = useState<UserData | null>(null);
+
+    const location = useLocation();
+    const { userID } = location.state;
 
     useEffect(() => {
 
@@ -16,10 +27,10 @@ function ProfileModal() {
             console.error("Authentication token is missing.");
             return;
         }
+        console.log('user id',userID)
 
-        fetch("https://localhost:7001/api/Profile/profile", {
+        fetch("http://localhost:8000/api/users/" + userID, {
             method: "GET",
-            credentials: "include",
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${token}`,
@@ -41,13 +52,22 @@ function ProfileModal() {
     }, []);
 
     return (
-        <div className="profile-modal">
+        <div className={`profile-modal ${userData ? 'centered' : ''}`}>
             {userData ? (
                 <>
-                    <h2>{userData.id}</h2>
+                    <div className="header-profile-modal">
+                        <img className="user-icon-img" src="../user-icon.png" alt="Profile Image" />
+
+                    </div>
+                    <div className="info">
+                        <h2>{userData.first_name} {userData.last_name}</h2>
+                        <p><strong>ID:</strong> {userData.id}</p>
+                        <p><strong>Birthdate:</strong> {userData.birthdate}</p>
+                        <p><strong>Email:</strong> {userData.email}</p>
+                    </div>
                 </>
             ) : (
-                <p>Loading user data...</p>
+                <p className="loading">Loading user data...</p>
             )}
         </div>
     );

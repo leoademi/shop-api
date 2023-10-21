@@ -16,6 +16,7 @@
 
 .contact-info h2 {
   font-size: 24px;
+  font-family: Ubuntu, sans-serif;
 }
 
 .contact-info p {
@@ -28,10 +29,12 @@
   padding: 10px;
   border: 1px solid #fff;
   background-color: #ffffff;
+  height: 500px;
 }
 
 .contact-form h2 {
   font-size: 24px;
+  font-family: Ubuntu, sans-serif;
 }
 
 .contact-form label {
@@ -46,13 +49,26 @@
 }
 
 .contact-form button {
-  background-color: #007bff;
+  background-color: #2d6d73c9;;
   color: #fff;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+  width: 150px;
 }
 
 .contact-form button:hover {
-  background-color: #0056b3;
+  background-color: #2d6d73c9;;
+}
+
+.contact-form h2 {
+  color: #2d6d73c9;
+  font-family: Ubuntu, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    display: flex;
+    flex-direction: column;
+  }
 }

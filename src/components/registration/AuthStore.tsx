@@ -1,9 +1,9 @@
-let isLoggedIn = false;
+import { createContext } from 'react';
 
-export function getIsLoggedIn() {
-    return isLoggedIn;
-}
+const AuthContext = createContext({
+    isLoggedIn: false,
+    login: () => {},
+    logout: () => {},
+});
 
-export function setIsLoggedIn(value) {
-    isLoggedIn = value;
-}
+export default AuthContext;

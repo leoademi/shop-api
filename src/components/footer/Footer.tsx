@@ -6,7 +6,7 @@ function Footer() {
     return (
         <footer className="footer">
             <div className="left-content">
-                <div className="logo">Your Logo Name</div>
+                <div className="logo">Creative Hub</div>
                 <div className="social-media-icons">
                     <a href="https://facebook.com"><FontAwesomeIcon icon={faFacebook} /></a>
                     <a href="https://twitter.com"><FontAwesomeIcon icon={faTwitter} /></a>
@@ -20,7 +20,7 @@ function Footer() {
                 </nav>
             </div>
             <div className="copyright-content">
-            <p>&copy; {new Date().getFullYear()} Your Company Name</p>
+            <p>&copy; {new Date().getFullYear()} By Creative Hub Team</p>
             </div>
         </footer>
     );

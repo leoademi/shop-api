@@ -15,8 +15,8 @@
 }
 
 .registration-button {
-  background-color: #007bff;
-  color: white;
+  background-color: white;
+  color: #2d6d73c9;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -24,7 +24,7 @@
 }
 
 .registration-button:hover {
-  background-color: #0056b3;
+  background-color: white;
 }
 
 .success-modal {
@@ -51,8 +51,4 @@
   padding: 10px 20px;
   margin: 10px;
   cursor: pointer;
-}
-
-.profile-modal {
-
 }

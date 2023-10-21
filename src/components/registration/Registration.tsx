@@ -3,11 +3,11 @@ import './Registration.scss';
 import { useNavigate } from 'react-router-dom';
 function Registration() {
     const [formData, setFormData] = useState({
+        first_name: '',
+        last_name: '',
         email: '',
+        birthdate: '',
         password: '',
-        emri: '',
-        mbiemri: '',
-        dateLindja: '',
     });
 
     const [isRegistered, setIsRegistered] = useState(false);
@@ -24,15 +24,15 @@ function Registration() {
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const registrationData = {
-            emri: formData.emri,
-            mbiemri: formData.mbiemri,
-            dateLindja: formData.dateLindja,
+            first_name: formData.first_name,
+            last_name: formData.last_name,
             email: formData.email,
+            birthdate: formData.birthdate,
             password: formData.password,
         };
 
         try {
-            const response = await fetch("https://localhost:7001/api/Auth/register", {
+            const response = await fetch("http://localhost:8000/api/users", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -62,42 +62,38 @@ function Registration() {
             <h2>Registration</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Emri:</label>
                     <input
                         type="text"
                         className="registration-input"
                         placeholder="Emri"
-                        name="emri"
-                        value={formData.emri}
+                        name="first_name"
+                        value={formData.first_name}
                         onChange={handleChange}
                     />
                 </div>
                 <div>
-                    <label>Mbiemri:</label>
                     <input
                         type="text"
-                        name="mbiemri"
+                        name="last_name"
                         placeholder="Mbiemri"
                         className="registration-input"
-                        value={formData.mbiemri}
+                        value={formData.last_name}
                         onChange={handleChange}
                         required
                     />
                 </div>
                 <div>
-                    <label>Ditelindja:</label>
                     <input
                         type="date"
-                        name="dateLindja"
+                        name="birthdate"
                         placeholder="Ditelindja"
                         className="registration-input"
-                        value={formData.dateLindja}
+                        value={formData.birthdate}
                         onChange={handleChange}
                         required
                     />
                 </div>
                 <div>
-                    <label>Email:</label>
                     <input
                         type="email"
                         name="email"
@@ -109,7 +105,6 @@ function Registration() {
                     />
                 </div>
                 <div>
-                    <label>Password:</label>
                     <input
                         type="password"
                         name="password"

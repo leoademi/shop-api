@@ -5,7 +5,7 @@ function Contact() {
     return (
         <div className="contact-page">
             <div className="contact-info">
-                <h2>Contact Us for the latest sales</h2>
+                <h2>Lets Talk</h2>
                 <p>Short paragraph about how to contact us.</p>
                 <p>Email: contact@example.com</p>
                 <p>Tel: +123 456 7890</p>
@@ -13,6 +13,7 @@ function Contact() {
             </div>
             <div className="contact-form">
                 <form>
+                    <h2> Contact us</h2>
                     <label htmlFor="name">Name:</label>
                     <input type="text" id="name" name="name" />
 
@@ -20,7 +21,7 @@ function Contact() {
                     <input type="email" id="email" name="email" />
 
                     <label htmlFor="message">Message:</label>
-                    <textarea id="message" name="message"></textarea>
+                    <textarea id="message" name="message" rows={4}></textarea>
 
                     <button type="submit">Submit</button>
                 </form>
